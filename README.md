@@ -18,3 +18,19 @@ A static site is what it sounds like... _static_. No matter who is interacting w
 - GitHub
 - Python 3.11+
 - A unix-like shell (bash, zsh, fish, etc.)
+
+## Clone Project & Open With Python Server
+
+In your CLI, use the command:
+
+```bash
+git clone git@github.com:mierdev/static_site_generator.git
+```
+
+Then navigate to the root of static_site_generator project and use the following command:
+
+```bash
+python server.py --dir public
+```
+
+Open your browser and paste the URL of your server (probably http://localhost:8888) into the address bar. You should see the project rendered as a web page!
