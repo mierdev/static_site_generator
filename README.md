@@ -4,7 +4,7 @@ My second Boot.dev guided project!
 
 Guided projects are designed to get you *out* of tutorial hell, by writing a ton of code and giving you challenges to solve on your own (you are given a few hints, but the rest is on you and Google).
 
-## About Book Bot
+## About SSG
 
 A static site generator takes raw content files (like Markdown and images) and turns them into a static website of HTML and CSS files. Static sites are quite popular for blogs and other content-heavy websites because they're lightning-fast, secure, and easy to host.
 
