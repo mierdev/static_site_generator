@@ -27,7 +27,7 @@ In your CLI, use the command:
 git clone git@github.com:mierdev/static_site_generator.git
 ```
 
-Then navigate to the root of static_site_generator project and use the following command:
+Then navigate to the root of the static_site_generator project and use the following command:
 
 ```bash
 python server.py --dir public
