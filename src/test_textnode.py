@@ -1,50 +1,37 @@
 import unittest
-
 from textnode import TextNode
 
 
 class TestTextNode(unittest.TestCase):
-  def test_eq(self):
-    node_1 = TextNode("This is a text node", "bold", "https://www.boot.dev")
-    node_2 = TextNode("This is a text node", "bold", "https://www.boot.dev")
-    node_3 = TextNode("Boring!", "cursive")
-    node_4 = TextNode("Boring!", "whatever", None)
-    self.assertEqual(node_1, node_2)
-    self.assertNotEqual(node_1, node_3)
-    self.assertNotEqual(node_3, node_4)
-    self.assertIsNone(node_3.url, node_4.url)
-    self.assertIsNotNone(node_1.url, node_2.url)
+  def setUp(self):
+     # setup common scenarios here
+     self.node_0 = TextNode("Boots is the BEST wizard bear", "text")
+     self.node_1 = TextNode("Boots is the BEST wizard bear", "text")
+     self.node_2 = TextNode("Boots is the BEST wizard bear", "bold")
+     self.node_3 = TextNode("Boots is a dog?", "text")
+     self.node_4 = TextNode("Boots is the BEST wizard bear", "bold", "https://www.boot.dev")
+     self.node_5 = TextNode("Boots is the BEST wizard bear", "bold", "https://www.boot.dev")
 
-'''
-    def test_eq(self):
-        node = TextNode("This is a text node", text_type_text)
-        node2 = TextNode("This is a text node", text_type_text)
-        self.assertEqual(node, node2)
 
-    def test_eq_false(self):
-        node = TextNode("This is a text node", text_type_text)
-        node2 = TextNode("This is a text node", text_type_bold)
-        self.assertNotEqual(node, node2)
+  def test_equal_true_text_texttype(self):
+     self.assertEqual(self.node_0, self.node_1)
 
-    def test_eq_false2(self):
-        node = TextNode("This is a text node", text_type_text)
-        node2 = TextNode("This is a text node2", text_type_text)
-        self.assertNotEqual(node, node2)
+  def test_equal_false_text_texttype(self):
+     self.assertNotEqual(self.node_0, self.node_2)
+  
+  def test_equal_false2_text_texttype(self):
+     self.assertNotEqual(self.node_0, self.node_3)
 
-    def test_eq_url(self):
-        node = TextNode("This is a text node", text_type_italic, "https://www.boot.dev")
-        node2 = TextNode(
-            "This is a text node", text_type_italic, "https://www.boot.dev"
-        )
-        self.assertEqual(node, node2)
-
-    def test_repr(self):
-        node = TextNode("This is a text node", text_type_text, "https://www.boot.dev")
-        self.assertEqual(
-            "TextNode(This is a text node, text, https://www.boot.dev)", repr(node)
-        )
-'''
-
+  def test_equal_true_url(self):
+     self.assertEqual(self.node_4, self.node_5)
+  
+  def test_equal_false_url(self):
+     self.assertNotEqual(self.node_2, self.node_4)
+  
+  def test_equal_true_repr(self):
+     format = f"TextNode(Boots is the BEST wizard bear, bold, https://www.boot.dev)"
+     self.assertEqual(format, repr(self.node_4))
+     
 
 if __name__ == "__main__":
   unittest.main()
