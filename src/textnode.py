@@ -1,21 +1,15 @@
 class TextNode:
-  def __init__(self, text, text_type, url):
+  def __init__(self, text, text_type, url=None):
     self.text = text
     self.text_type = text_type
     self.url = url
-
-    if not url:
-      self.url = None
   
-  def __eq__(textnode_1, textnode_2):
-    if textnode_1 == textnode_2:  # change to check ALL properties !!
-      return True
+  def __eq__(self, other_textnode):
+    return (
+      self.text == other_textnode.text
+      and self.text_type == other_textnode.text_type
+      and self.url == other_textnode.url
+    )
     
-  def __repr__():
-    pass
-    '''
-    returns a string representation of the TextNode object. It should look like this:
-    TextNode(TEXT, TEXT_TYPE, URL)
-
-    Where TEXT, TEXT_TYPE, and URL are the values of the text, text_type, and url properties, respectively.
-    '''
+  def __repr__(self):
+    return f"TextNode({self.text}, {self.text_type}, {self.url})"
