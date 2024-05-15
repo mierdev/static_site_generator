@@ -14,6 +14,7 @@ class HTMLNode:
       for prop in self.props:
         assembled_props.append(f"{prop}=\"{self.props[prop]}\" ")
       return assembled_props  # FIXME: this returns wrong things, a list instead of a string and no spaces between
+      # RESEARCH IF RECURSION WORKS ?!?! + rstrip() for the extra space at the end
     
   def __repr__(self):
     return f"HTMLNode({self.tag}, {self.value}, {self.children}, {self.props})"
